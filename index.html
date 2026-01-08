@@ -687,25 +687,28 @@ img {
 
 
 /* Committee Synced Slideshow Styles */
+/* --- REPLACED SECTION --- */
 .committee-img-container {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 550px; /* Matches your desktop preference */
   overflow: hidden;
   border-radius: 8px;
+  background-color: #f9f9f9; /* Background for any empty space */
 }
 
-.committee-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none; /* Hidden by default */
+/* Add this Mobile Fix */
+@media (max-width: 768px) {
+  .committee-img-container {
+    height: 400px !important; /* Smaller fixed height for mobile */
+  }
+  .committee-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important; /* This ensures the WHOLE image is shown without cutting */
+  }
 }
-
-/* Ensure the first one is visible if JS fails, though JS will handle this */
-.committee-img:first-child {
-  display: block; 
-}
+/* ------------------------ */
 
 .committee-text {
   display: none; /* Hidden by default */
@@ -899,7 +902,7 @@ img {
    <div class="row about-row" data-aos="fade-up" style="margin-top: 60px;">
     
     <div class="col-md-6 col-xs-12 about-slide-col">
-      <div class="committee-img-container" style="height: 550px;">
+      <div class="committee-img-container">
         
         <img class="committee-img fade" src="president.jpg" alt="President">
         <img class="committee-img fade" src="vicepresident.jpg" alt="Vice President">
@@ -1356,6 +1359,7 @@ AOS.init({
 </body>
 
 </html>
+
 
 
 
