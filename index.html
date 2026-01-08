@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="origin-when-cross-origin" name="referrer">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <title>Join the BioMed Club at Navrachana University</title>
+  <meta name="title" content="Join the BioMed Club at Navrachana University">
+  <meta name="description" content="Explore the world of Biomedical Sciences with BioMed Club. Access events, resources, and community engagement.">
+  <meta property="og:title" content="Join the BioMed Club at Navrachana University" />
+  <meta property="og:description" content="Explore the world of Biomedical Sciences with BioMed Club. Access events, resources, and community engagement." />
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style type="text/css">
+    /* GLOBAL RESET & BASICS */
+    html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; font-size: 16px; }
+    *, *::before, *::after { box-sizing: inherit; }
+    body { margin: 0; font-family: "Poppins", Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.5; color: #373a3c; background-color: #fff; padding-top: 80px; }
+    
+    /* IMAGES */
+    img { border: 0; vertical-align: middle; max-width: 100%; height: auto; }
+    
+    /* LINKS */
+    a { color: #0275d8; text-decoration: none; background-color: transparent; }
+    a:hover { color: #014c8c; text-decoration: underline; }
+
+    /* LAYOUT UTILS */
+    .container { margin-left: auto; margin-right: auto; padding-left: 10px; padding-right: 10px; width: 100%; }
+    @media (min-width: 544px) { .container { max-width: 576px; } }
+    @media (min-width: 768px) { .container { max-width: 720px; } }
+    @media (min-width: 992px) { .container { max-width: 940px; } }
+    @media (min-width: 1200px) { .container { max-width: 1140px; } }
+    
+    .row { display: flex; flex-wrap: wrap; margin-left: -10px; margin-right: -10px; }
+    [class*="col-"] { position: relative; min-height: 1px; padding-left: 10px; padding-right: 10px; }
+    .col-xs-12 { flex: 0 0 100%; max-width: 100%; }
+    @media (min-width: 768px) {
+      .col-md-5 { flex: 0 0 41.66667%; max-width: 41.66667%; }
+      .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+      .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+    }
+
+    /* CSS VARIABLES (Theme Colors) */
+   /* UPDATED COLORS */
+    :root {
+      --clr-primary: #085f75;           /* Deep Navy Blue */
+      --clr-primary-dark: #001630;      /* Darker Navy */
+      --clr-primary-light: #199b85;     /* Lighter Navy */
+      --clr-secondary: #50C878;         /* Emerald Green */
+      --clr-accent: #00FFFF;            /* Electric Cyan */
+      --clr-teal: #008080;              /* Teal */
+      --clr-seafoam: #9FE2BF;           /* Seafoam Green */
+      --clr-slate: #708090;             /* Slate Blue */
+      --clr-text: #333333;              /* Jet Black for text */
+      --clr-text-dark: #ffffff;
+      --clr-section-background: #ffffff;/* Pure White */
+      --clr-section-background-dark: #000000; /* Pure Black */
+      --spacer: 20px;
+      --spacer-sm: 10px;
+      --spacer-md: 40px;
+      --spacer-lg: 80px;
+      --font-baseline: 16px;
+      --radius: 2px;
+      --transition: all 0.15s ease-in-out;
+    }
+    /* COMPONENT STYLES */
+    .sb-section { padding: var(--spacer-lg) 0; position: relative; background-size: cover; background-position: center; }
+    .sb-section-opt-dark { background-color: var(--clr-section-background-dark); color: #fff; }
+    .sb-section-opt-light { background-color: var(--clr-section-background-light); color: var(--clr-text); }
+    
+    /* BUTTONS */
+    .sb-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 30px; border-radius: 4px; font-weight: 600; text-transform: uppercase;
+      transition: var(--transition); cursor: pointer; border: 2px solid transparent;
+    }
+    .sb-button--primary { background-color: var(--clr-primary); color: #fff; border-color: var(--clr-primary); }
+    .sb-button--primary:hover { background-color: var(--clr-primary-dark); border-color: var(--clr-primary-dark); text-decoration: none; }
+    .sb-button--secondary { background-color: transparent; border-color: currentColor; color: inherit; }
+    .sb-button--secondary:hover { background-color: var(--clr-primary); border-color: var(--clr-primary); color: #fff; text-decoration: none; }
+
+    /* NAVIGATION */
+   /* NAVIGATION */
+    #sb-navigation { 
+      position: fixed; /* Changed from sticky to fixed for better browser support on scroll */
+      top: 0; 
+      left: 0;
+      right: 0;
+      z-index: 9999; /* Higher z-index to stay above all content */
+      background: #fff; 
+      border-bottom: 1px solid #eee; 
+    }
+    
+    /* Add this to prevent content from jumping under the fixed header */
+    body { padding-top: 80px; }
+    .sb-top-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .sb-top-header__brand { font-size: 1.5rem; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px; }
+    .sb-nav__list { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .sb-nav__item { margin-left: 25px; }
+    .sb-nav__link { color: #555; font-weight: 500; text-transform: uppercase; font-size: 0.9rem; }
+    .sb-nav__link:hover { color: var(--clr-primary); text-decoration: none; }
+    
+    /* MOBILE NAV TOGGLE */
+    .sb-mobile-nav-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+    .sb-mobile-nav-btn span { display: block; width: 25px; height: 3px; background: #333; position: relative; }
+    .sb-mobile-nav-btn span::before, .sb-mobile-nav-btn span::after {
+      content: ''; position: absolute; width: 100%; height: 3px; background: #333; left: 0;
+    }
+    .s.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  display: block !important; /* Forces visibility */
+  z-index: 1001; /* Keeps it above other elements */
+  margin-right: 10px;
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #28292c;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 2px solid #28292c;
+  display: block;
+}
+
+.checkbox {
+  opacity: 0; /* Changed from display:none to ensure it's clickable but invisible */
+  position: absolute;
+}
+
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #d8dbe0;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  box-shadow: inset 5px -2px 0px 0px #d8dbe0;
+  background-color: #28292c;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(23px);
+  background-color: #f39c12;
+  box-shadow: none;
+}b-mobile-nav-btn span::before { top: -8px; }
+    .sb-mobile-nav-btn span::after { top: 8px; }
+
+    @media (max-width: 991px) {
+      .sb-mobile-nav-btn { display: block; }
+      .sb-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+      .sb-nav.active { display: block; }
+      .sb-nav__list { flex-direction: column; align-items: flex-start; }
+      .sb-nav__item { margin: 10px 0; width: 100%; }
+      .sb-button--nav { width: 100%; text-align: center; }
+      
+    }
+
+    /* HERO SECTION */
+    .sb-hero { text-align: left; }
+    .sb-hero__title { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.1; }
+    .sb-hero__subtitle { font-size: 1.5rem; margin-bottom: 30px; opacity: 0.9; }
+    .sb-highlight-text { color: var(--clr-primary); }
+    
+    /* ITEMS GRID */
+    .items-grid { display: flex; flex-wrap: wrap; margin: -15px; list-style: none; padding: 0; }
+    .items-grid__item { padding: 15px; width: 100%; flex: 0 0 100%; }
+    @media(min-width: 768px) { .items-grid__item { flex: 0 0 33.333%; max-width: 33.333%; } }
+    
+    .items-grid__item-body { display: block; height: 100%; background: #f9f9f9; transition: var(--transition); border-radius: 4px; overflow: hidden; }
+    .items-grid__item-body:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    
+    .items-grid__item-image { position: relative; padding-top: 60%; overflow: hidden; background: #eee; }
+    .items-grid__item-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    
+    .items-grid__item-content { padding: 20px; }
+    .items-grid__header { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: #333; }
+    .items-grid__description { color: #666; font-size: 0.95rem; }
+    
+    /* CONTACT FORM */
+    .contact-full__form { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 30px rgba(0,0,0,0.05); }
+    .form__group { margin-bottom: 20px; }
+    .form__label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+    .form__input { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+    .form__input:focus { border-color: var(--clr-primary); outline: none; }
+    .form__input--textarea { min-height: 120px; resize: vertical; }
+    
+    /* FOOTER */
+    #sb-footer { background: #111; color: #aaa; padding: 60px 0; font-size: 0.9rem; }
+    .sb-footer a { color: #fff; }
+    .sb-footer__nav-list { display: flex; list-style: none; padding: 0; margin-top: 20px; }
+    .sb-footer__nav-list li { margin-right: 20px; }
+    .by-b12 { margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; }
+
+    /* UTILS */
+    .sb-section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: #222; }
+    .sb-section-subtitle { font-size: 1.25rem; color: #666; margin-bottom: 30px; }
+    .text-center { text-align: center; }
+    
+    @media (max-width: 768px) {
+      .sb-hero__title { font-size: 2.5rem; }
+      .sb-section { padding: 40px 0; }
+    }
+    /* Dark Mode Global Styles */
+/* UPDATED DARK MODE */
+body.dark-mode {
+  background-color: var(--clr-section-background-dark) !important; 
+  color: #ffffff !important;
+}
+
+body.dark-mode .sb-section-opt-light {
+  background-color: #0a0a0a !important; /* Slightly off-black for contrast */
+  color: #ffffff !important;
+}
+
+body.dark-mode .sb-section-title {
+  color: var(--clr-secondary) !important; /* Titles turn Emerald Green in Dark Mode */
+}
+
+body.dark-mode .sb-section-subtitle,
+body.dark-mode .items-grid__description {
+  color: var(--clr-slate) !important; /* Use Slate Blue for sub-text */
+}
+
+body.dark-mode .items-grid__item-body {
+  background-color: #000000 !important;
+}
+
+body.dark-mode .sb-nav__link {
+  color: #ffffff !important;
+}
+
+
+/* DARK MODE FOOTER FIX - UPDATED */
+body.dark-mode #sb-footer {
+  background-color: #ffffff !important; 
+  color: #000000 !important;
+}
+
+/* Forces Title, Links, and Icons to be black in Dark Mode */
+body.dark-mode #sb-footer h2,
+body.dark-mode #sb-footer a,
+body.dark-mode #sb-footer span,
+body.dark-mode #sb-footer i {
+  color: #000000 !important; 
+}
+
+/* This overrides the inline 'color: #fff' on the heading */
+body.dark-mode #sb-footer h2 {
+  color: #000000 !important; 
+}
+
+/* Add this to your existing body.dark-mode CSS block */
+body.dark-mode .sb-top-header__brand {
+  color: #ffffff !important;
+}
+
+/* This ensures the navigation bar itself stays dark */
+/* Add this to your style tag */
+body.dark-mode #sb-navigation,
+body.dark-mode .sb-nav,
+body.dark-mode .sb-top-header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .sb-mobile-nav-btn span,
+body.dark-mode .sb-mobile-nav-btn span::before,
+body.dark-mode .sb-mobile-nav-btn span::after {
+  background: #ffffff !important; /* Makes the "hamburger" menu icon white */
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* 70% of laptop screen height */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.mySlides {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the 70% height without stretching */
+}
+
+/* Dark overlay so text is readable over images */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+/* Navigation */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  z-index: 10;
+  background: rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+.next { right: 0; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.5); }
+
+/* Animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .slideshow-container { height: 50vh; } /* Shorter on phones for better visibility */
+}
+
+
+
+/* THEME ACCENTS */
+.sb-highlight-text {
+  color: var(--clr-secondary); /* Emerald Green highlights */
+}
+
+.gallery-link {
+  color: var(--clr-teal); /* Teal for links */
+}
+
+.gallery-link:hover {
+  color: var(--clr-accent); /* Electric Cyan on hover */
+}
+
+/* Flip Card Secondary Theme */
+.flip-card-front {
+  background-color: var(--clr-primary); /* Navy Front */
+  border: 1px solid var(--clr-seafoam); /* Seafoam Border */
+}
+
+/* Custom Scrollbar using Seafoam/Teal */
+.gallery-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--clr-teal);
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-seafoam);
+}
+
+/* Form Focus with Cyan */
+body.dark-mode .form__input:focus {
+  border-color: var(--clr-accent) !important;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2);
+}
+
+/* Expand Navbar to corners on larger screens */
+@media (min-width: 992px) {
+  #sb-navigation .container {
+    max-width: 95% !important; /* Forces the content to the corners */
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+ 
+ /* Specific styles for About Us slideshows */
+.about-slideshow {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.about-slideshow .about-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-slideshow .active-slide {
+  display: block;
+}
+ 
+
+/* FLIP CARD STYLES */
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+ margin: 0;
+  list-style: none;
+  padding: 0 20px; /* Adds a 20px "safety zone" on the far left and right */
+  justify-content: center; /* Centers the row if there are fewer than 5 cards */
+}
+
+.flip-card-container {
+  padding: 10px;
+ flex: 0 0 50%; /* 2 per row on mobile */
+  max-width: 50%;
+  perspective: 1000px;
+  padding: 12px;
+}
+
+@media (min-width: 992px) {
+  .flip-card-container {
+    flex: 0 0 20%; /* 5 per row on laptop */
+    max-width: 20%;
+    padding: 25px;
+  }
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Taller length */
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--clr-primary);
+  color: white;
+  padding: 20px;
+}
+
+.flip-card-back {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.flip-card-back-content {
+  padding: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40%;
+}
+
+.gallery-link {
+  margin-top: 10px;
+  color: var(--clr-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+body.dark-mode .flip-card-back {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* --- Gallery Horizontal Scroll CSS --- */
+.gallery-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; /* Prevents vertical jitter */
+  gap: 20px;
+  padding: 20px 10px 30px 10px; /* Extra bottom padding for scrollbar */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Ensures items don't wrap to a second line */
+  flex-wrap: nowrap; 
+}
+
+/* Individual Image Container */
+.gallery-scroll-item {
+  flex: 0 0 300px; /* Prevents shrinking: stay exactly 300px */
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+/* The "See More" Card at the end */
+.see-more-card {
+  flex: 0 0 200px; /* Slightly narrower than images */
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border-radius: 8px;
+  border: 2px dashed var(--clr-primary);
+  transition: var(--transition);
+}
+
+.see-more-card:hover {
+  background: #e0e0e0;
+  transform: translateY(-5px);
+}
+
+/* Custom Scrollbar Styling */
+.gallery-scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--clr-primary);
+  border-radius: 10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-primary-dark);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .see-more-card {
+  background: #1a1a1a;
+  border-color: var(--clr-primary-light);
+}
+
+body.dark-mode .gallery-scroll-container::-webkit-scrollbar-track {
+  background: #000;
+}
+
+
+/* Enhanced Aesthetic for Contact Form in Dark Mode */
+body.dark-mode .contact-full__form {
+  background: #1a1a1a !important;
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .form__input {
+  background-color: #262626 !important;
+  border-color: #444 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .form__input::placeholder {
+  color: #888;
+}
+
+body.dark-mode .form__input:focus {
+  border-color: var(--clr-primary) !important;
+  background-color: #2d2d2d !important;
+  box-shadow: 0 0 0 3px rgba(50, 170, 39, 0.2);
+}
+
+body.dark-mode .form__label {
+  color: #e0e0e0 !important;
+  font-weight: 500;
+}
+
+ /* Fix for the mobile right-side gap */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Ensure images don't break layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure text comes first on mobile regardless of HTML order */
+@media (max-width: 767px) {
+  .about-row-reverse {
+    flex-direction: column !important;
+  }
+  .about-text-col {
+    order: 1 !important;
+    margin-bottom: 20px;
+  }
+  .about-slide-col {
+    order: 2 !important;
+  }
+}
+
+/* Specific spacing for the About Us rows */
+.about-row {
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Scroll Reveal Base State */
+/* Add to your existing <style> block */
+[data-aos] { pointer-events: none; }
+[data-aos].aos-animate { pointer-events: auto; }
+
+/* Ensures Fancybox links don't add weird underlining to images */
+[data-fancybox] { text-decoration: none !important; outline: none; }
+/* Delay for items in a grid to create a 'staggered' look */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Classy Button Glow */
+.sb-button--primary {
+  box-shadow: 0 4px 15px rgba(50, 170, 39, 0.2);
+}
+
+.sb-button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(50, 170, 39, 0.4);
+}
+
+/* Image Zoom Effect for Gallery/Events */
+.items-grid__item-image img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.items-grid__item-body:hover .items-grid__item-image img {
+  transform: scale(1.08);
+}
+
+
+/* Committee Synced Slideshow Styles */
+.committee-img-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.committee-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* Hidden by default */
+}
+
+/* Ensure the first one is visible if JS fails, though JS will handle this */
+.committee-img:first-child {
+  display: block; 
+}
+
+.committee-text {
+  display: none; /* Hidden by default */
+  min-height: 150px; /* Prevents layout jump when text length varies */
+}
+
+.committee-text:first-of-type {
+  display: block;
+}
+
+/* Custom Navigation Buttons for this section */
+.comm-prev, .comm-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.3); /* Slight background for visibility */
+}
+
+.comm-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.comm-prev:hover, .comm-next:hover {
+  background-color: var(--clr-primary);
+}
+
+
+
+/* --- CUSTOM MOBILE HEADER FIXES --- */
+
+/* Default (Laptop) Logo Class */
+.sb-logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Default (Laptop) Text Size override */
+.sb-top-header__brand {
+  font-size: 2.2rem; /* Keeps your current laptop size */
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+  /* Smaller Logo on mobile */
+  .sb-logo {
+    height: 50px !important; 
+  }
+
+  /* Smaller Text on mobile */
+  .sb-top-header__brand {
+    font-size: 1.3rem !important; 
+  }
+
+  /* Reduce gap and fix the cut-off issue caused by negative margin */
+  .sb-header-group {
+    gap: 8px !important;
+    margin-left: 0 !important; /* Resets the -20px margin */
+  }
+}
+ </style>
+</head>
+
+<body>
+
+  <div id="sb-navigation">
+  <div class="container">
+    <div class="sb-top-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+      
+   <div class="sb-header-group" style="display: flex; align-items: center; gap: 20px; margin-left: -20px;">
+  <img class="sb-logo" src="biomed logo.png" alt="Logo"> 
+  <span class="sb-top-header__brand" href="#" style="margin: 0;">BioMed Club</span>
+</div>
+
+      <div style="display: flex; align-items: center;">
+        
+        <div style="display: flex; align-items: center;">
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-right: 10px; padding: 5px; display: flex; align-items: center;">
+    <span id="theme-icon">🌙</span>
+  </button>
+  
+  <button class="sb-mobile-nav-btn" type="button"><span></span></button>
+  
+  <nav class="sb-nav">
+    <ul class="sb-nav__list">
+      <li class="sb-nav__item"><a class="sb-nav__link" href="#home">Home</a></li>
+      <li class="sb-nav__item"><a class="sb-nav__link" href="#about">About</a></li>
+      <li class="sb-nav__item"><a class="sb-nav__link" href="#events">Events</a></li>
+      <li class="sb-nav__item"><a class="sb-nav__link" href="#gallery">Gallery</a></li>
+      <li class="sb-nav__item sb-nav__btn">
+        <a class="sb-button sb-button--primary" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+      </div>
+
+    </div> </div> </div>
+
+
+<section id="home" class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="https://cdn.b12.io/client_media/GiP6TxIV/98c55163-8967-11f0-8af6-0242ac110002-jpg-hero_image.jpeg" alt="BioMed 1">
+    <div class="slide-overlay">
+      <div class="container">
+        <h1 class="sb-hero__title">Join the BioMed Club</h1>
+        <div class="sb-hero__subtitle">Explore the world of <span class="sb-highlight-text">biomedical</span> sciences</div>
+        <a class="sb-button sb-button--primary" href="#events">View events</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="https://cdn.b12.io/client_media/GiP6TxIV/9aa49782-8967-11f0-bed1-0242ac110002-jpg-regular_image.jpeg" alt="BioMed 2">
+    <div class="slide-overlay">
+      <div class="container">
+        <h1 class="sb-hero__title">Innovative Research</h1>
+        <div class="sb-hero__subtitle">Hands-on experience in <span class="sb-highlight-text">modern</span> labs</div>
+        <a class="sb-button sb-button--primary" href="#about">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="https://cdn.b12.io/client_media/GiP6TxIV/9af1402c-8967-11f0-91ec-0242ac110002-jpg-regular_image.jpeg" alt="BioMed 3">
+    <div class="slide-overlay">
+      <div class="container">
+        <h1 class="sb-hero__title">Future Leaders</h1>
+        <div class="sb-hero__subtitle">Building a <span class="sb-highlight-text">scientific</span> community</div>
+        <a class="sb-button sb-button--primary" href="#contact">Join Us</a>
+      </div>
+    </div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</section>
+
+  <section id="about" class="sb-section sb-section-opt-light">
+  <div class="container">
+  <div class="row about-row" data-aos="fade-up">
+    <div class="col-md-6 col-xs-12 about-text-col">
+      <h2 class="sb-section-title">Our University</h2>
+      <p>BioMed Club is proud to be part of <a href="https://nuv.ac.in/" target="_blank" style="color: var(--clr-primary); font-weight: 600; text-decoration: underline;">Navrachana University</a>. A premier institution known for its interdisciplinary approach to education and excellence in research.</p>
+    </div>
+    <div class="col-md-6 col-xs-12 about-slide-col">
+      <div class="about-slideshow" data-speed="3000">
+        <img class="about-slide active-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/98f820f8-8967-11f0-a229-0242ac110002-jpg-hero_image.jpeg" alt="Uni 1">
+        <img class="about-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/9aa49782-8967-11f0-bed1-0242ac110002-jpg-regular_image.jpeg" alt="Uni 2">
+      </div>
+    </div>
+  </div>
+
+  <div class="row about-row about-row-reverse" data-aos="fade-up">
+    <div class="col-md-6 col-xs-12 about-slide-col">
+      <div class="about-slideshow" data-speed="3500">
+        <img class="about-slide active-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/9e63d13a-8967-11f0-b8d6-0242ac110002-jpg-regular_image.jpeg" alt="Research 1">
+        <img class="about-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/9e4183ae-8967-11f0-b6b3-0242ac110002-jpg-regular_image.jpeg" alt="Research 2">
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12 about-text-col">
+      <h2 class="sb-section-title">Cutting-edge Research</h2>
+      <p>Explore something new in our labs every day. Our students engage in groundbreaking projects ranging from molecular biology to medical diagnostics.</p>
+    </div>
+  </div>
+
+  <div class="row about-row" data-aos="fade-up">
+    <div class="col-md-6 col-xs-12 about-text-col">
+      <h2 class="sb-section-title">Community Impact</h2>
+      <p>Beyond the classroom, we focus on real-world applications. Our members participate in community health drives and awareness programs.</p>
+    </div>
+    <div class="col-md-6 col-xs-12 about-slide-col">
+      <div class="about-slideshow" data-speed="4000">
+        <img class="about-slide active-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/9af1402c-8967-11f0-91ec-0242ac110002-jpg-regular_image.jpeg" alt="Impact 1">
+        <img class="about-slide" src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Impact 2">
+      </div>
+    </div>
+  </div>
+  <div class="row about-row" data-aos="fade-up" style="margin-top: 60px;">
+    
+   <div class="row about-row" data-aos="fade-up" style="margin-top: 60px;">
+    
+    <div class="col-md-6 col-xs-12 about-slide-col">
+      <div class="committee-img-container" style="height: 550px;">
+        
+        <img class="committee-img fade" src="president.jpg" alt="President">
+        <img class="committee-img fade" src="vicepresident.jpg" alt="Vice President">
+        <img class="committee-img fade" src="secretary.jpg" alt="Secretary">
+        <img class="committee-img fade" src="treasurer.jpg" alt="Treasurer">
+       
+        <img class="committee-img fade" src="communication.jpg" alt="Head of Outreach">
+         <img class="committee-img fade" src="itinnovation.jpg" alt="Head of IT">
+
+        <a class="comm-prev" onclick="plusCommitteeSlides(-1)">&#10094;</a>
+        <a class="comm-next" onclick="plusCommitteeSlides(1)">&#10095;</a>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-xs-12 about-text-col">
+      <h2 class="sb-section-title">Meet our current committee</h2>
+      
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">PRESIDENT</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Shweta Nambiar</span>
+        </div>
+        <p>Becoming the President of the BioMed Club is not just a position, but a responsibility I hold close to my heart.</p>
+        <p>Over the years, this club has been a place of growth, collaboration, and belonging. As I take on this role, my hope is to give back to this community with sincerity, passion, and purpose. I'm excited to carry forward this legacy and contribute to making our club a pillar of strength and learning for everyone.</p>
+        <p>Together, let's make this year full of learning, leadership, and lasting memories.</p>
+      </div>
+
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">VICE PRESIDENT</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Harshvardhan Dhadhal</span>
+        </div>
+        <p>Being entrusted with the role of Vice President of the BioMed Club means a lot to me. I am truly grateful for this opportunity, as it allows me to learn, grow, and contribute while working alongside such an inspiring team. My vision is to help create a space where every member feels encouraged to share ideas, take initiatives, and grow together in both knowledge and experience.</p>
+        <p>I see the club as more than an activity-it's a platform to inspire curiosity, strengthen teamwork, and make learning enjoyable. By building connections between students, faculty, and real-world science</p>
+      </div>
+
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">SECRETARY</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Harishree Kagrana</span>
+        </div>
+        <p>I am truly grateful for the trust placed in me by electing me as the Secretary of the Biomed Club. This opportunity is not just a role but a responsibility that I wholeheartedly embrace. I commit to giving my best in every step, be it creating opportunities, ensuring smooth communication, or building a space where every student feels encouraged to learn, grow, and contribute.</p>
+        <p>With dedication, teamwork, and love for what we do, I look forward to making the most of this journey for the benefit of all students.</p>
+      </div>
+
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">TREASURER</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Sauhard Yadav</span>
+        </div>
+        <p>I am honored to serve as Treasurer for the Biomed Club this academic year. My role involves overseeing the club's finances, bringing in sponsorships, and managing them to support our activities, projects, and events efficiently. It is a privilege to collaborate with talented peers who share a passion for the Club. As members of the Biomed Club, we are committed to innovation, growth, and a supportive environment. Excited for an impactful year ahead, filled with new opportunities, meaningful experiences, and achievements for everyone in the Biomed Club.</p>
+      </div>
+
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">HEAD OF OUTREACH AND COMMUNICATION</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Aastha Talati</span>
+        </div>
+        <p>Social media has always been a powerful tool for me to connect, share, and inspire. I am truly grateful for the opportunity to serve as the Head of Outreach and Communication, and I look forward to contributing to the growth of our club by amplifying our initiatives, building meaningful connections, and ensuring our message reaches far and wide. My vision is to create an engaging and inclusive community where every voice is valued and every effort celebrated. Together, let's make BioMed Club shine brighter than ever!</p>
+      </div>
+
+      <div class="committee-text fade">
+        <div style="margin-bottom: 15px;">
+           <span style="display: block; font-size: 1.6rem; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px; line-height: 1.2;">HEAD OF IT AND INNOVATION</span>
+           <span style="display: block; font-size: 1.1rem; color: #444; font-weight: 500; margin-top: 5px;">Bhavya Thakkar</span>
+        </div>
+        <p>Stepping into the role of Head of IT & Innovation is both an honor and an exciting challenge. I believe technology isn't just about systems, but about ideas that make us work smarter and connect better. My aim is to bring creative digital solutions, simplify processes, and spark innovation that adds real value to our club. With teamwork and imagination, I look forward to shaping an IT culture that's dynamic, inclusive, and future-driven</p>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+</section>
+
+
+      
+     
+
+  <section id="events" class="sb-section sb-section-opt-light">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 40px;">
+        <h2 class="sb-section-title" data-aos="fade-up">Explore our activities</h2>
+        <div class="sb-section-subtitle">Join us for exciting opportunities!</div>
+      </div>
+
+      <ul class="items-grid">
+        <li class="items-grid__item">
+          <div class="items-grid__item-body">
+            <div class="items-grid__item-image">
+              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e76cc7e-8967-11f0-a1c9-0242ac110002-jpg-regular_image.jpeg" alt="Conference">
+            </div>
+            <div class="items-grid__item-content">
+              <div class="items-grid__header">Annual biomedical conference</div>
+              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 11:00 AM</div>
+              <div class="items-grid__description">Engage with biomedical professionals.</div>
+            </div>
+          </div>
+        </li>
+        <li class="items-grid__item">
+          <div class="items-grid__item-body">
+            <div class="items-grid__item-image">
+              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e93e3fe-8967-11f0-b107-0242ac110002-jpg-regular_image.jpeg" alt="Workshop">
+            </div>
+            <div class="items-grid__item-content">
+              <div class="items-grid__header">Interactive workshop series</div>
+              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 12:00 PM</div>
+              <div class="items-grid__description">Hands-on learning experiences await you.</div>
+            </div>
+          </div>
+        </li>
+        <li class="items-grid__item">
+          <div class="items-grid__item-body">
+            <div class="items-grid__item-image">
+              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Magazine Launch">
+            </div>
+            <div class="items-grid__item-content">
+              <div class="items-grid__header">Biomedical science magazine launch</div>
+              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 1:00 PM</div>
+              <div class="items-grid__description">Discover groundbreaking research insights.</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="gallery" class="sb-section sb-section-opt-light" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <h2 class="sb-section-title" data-aos="fade-up">Our club moments</h2>
+      <div class="sb-section-subtitle" data-aos="fade-up">Capturing the essence of BioMed Club</div>
+    </div>
+
+    <div class="gallery-scroll-container">
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9aa49782-8967-11f0-bed1-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9aa49782-8967-11f0-bed1-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 1">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9a396ad4-8967-11f0-88b4-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9a396ad4-8967-11f0-88b4-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 2">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9af1402c-8967-11f0-91ec-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9af1402c-8967-11f0-91ec-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 3">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9e76cc7e-8967-11f0-a1c9-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e76cc7e-8967-11f0-a1c9-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 4">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9e93e3fe-8967-11f0-b107-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e93e3fe-8967-11f0-b107-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 5">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 6">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/98c55163-8967-11f0-8af6-0242ac110002-jpg-hero_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/98c55163-8967-11f0-8af6-0242ac110002-jpg-hero_image.jpeg" alt="Gallery 7">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9e63d13a-8967-11f0-b8d6-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e63d13a-8967-11f0-b8d6-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 8">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9e4183ae-8967-11f0-b6b3-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e4183ae-8967-11f0-b6b3-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 9">
+          </a>
+        </div>
+      </div>
+      <div class="gallery-scroll-item">
+        <div class="items-grid__item-image" style="padding-top: 100%;">
+          <a href="https://cdn.b12.io/client_media/GiP6TxIV/9de0c3ed-8967-11f0-8770-0242ac110002-jpg-regular_image.jpeg" data-fancybox="gallery-group">
+            <img src="https://cdn.b12.io/client_media/GiP6TxIV/9de0c3ed-8967-11f0-8770-0242ac110002-jpg-regular_image.jpeg" alt="Gallery 10">
+          </a>
+        </div>
+      </div>
+
+      <div class="see-more-card" style="flex: 0 0 200px; height: 300px; margin-right: 20px;">
+        <a href="#" class="gallery-link" style="text-align: center;">Click here to<br>see more</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="contact" class="sb-section sb-section-opt-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-xs-12">
+          <div class="contact-full__form" data-aos="zoom-in-right">
+            <h2 class="sb-section-title" style="font-size: 1.8rem;">Get in touch</h2>
+            <div class="sb-section-subtitle" style="margin-bottom: 20px;">We’d love to hear from you!</div>
+            <form action="https://formsubmit.co/biomedclub@nuv.ac.in" method="POST">
+  <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_captcha" value="false">
+
+ <input type="hidden" name="_next" value="https://helygandhi05.github.io/the-BioMed-/thanks.html">
+
+  <div class="form__group">
+    <label class="form__label">Name *</label>
+    <input type="text" name="name" class="form__input" placeholder="Jane Smith" required>
+  </div>
+  <div class="form__group">
+    <label class="form__label">Email address *</label>
+    <input type="email" name="email" class="form__input" placeholder="email@website.com" required>
+  </div>
+  <div class="form__group">
+    <label class="form__label">Phone number *</label>
+    <input type="tel" name="phone" class="form__input" placeholder="555-555-5555" required>
+  </div>
+  <div class="form__group">
+    <label class="form__label">Message</label>
+    <textarea name="message" class="form__input form__input--textarea" placeholder="How can we help?" rows="4"></textarea>
+  </div>
+  <button type="submit" class="sb-button sb-button--primary" style="width: 100%;">Send Message</button>
+</form>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-xs-12" style="margin-top: 30px;">
+          <div style="padding-left: 20px;">
+            <div style="margin-bottom: 40px;">
+              <h3 style="font-size: 1.25rem; font-weight: 600;">Get in touch</h3>
+              <a href="mailto:hely.satish9a@gmail.com" style="color: var(--clr-primary); font-size: 1.1rem;">hely.satish9a@gmail.com</a>
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+              <h3 style="font-size: 1.25rem; font-weight: 600;">Location</h3>
+              <p>Kollam, KL IN</p>
+            </div>
+
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 600;">Hours</h3>
+              <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><strong>Mon - Fri:</strong> 9:00am – 5:00pm</li>
+                <li><strong>Saturday:</strong> 9:00am – 1:00pm</li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer id="sb-footer">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-6 col-xs-12" style="text-align: left;">
+        <h2 style="font-size: 1.5rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 700;">BioMed Club</h2>
+        
+        <ul style="list-style: none; padding: 0; margin: 0;">
+           <li style="margin-bottom: 10px; display: flex; align-items: center;">
+             <i class="fa fa-instagram" style="width: 25px; font-size: 1.3rem;"></i>
+             <a href="https://www.instagram.com/biomed_nuv/?hl=en" target="_blank" style="margin-left: 8px;">@biomed_nuv</a>
+           </li>
+
+           <li style="margin-bottom: 10px; display: flex; align-items: center;">
+             <i class="fa fa-linkedin-square" style="width: 25px; font-size: 1.3rem;"></i>
+             <a href="in.linkedin.com/company/biomed-nuv" target="_blank" style="margin-left: 8px;">BioMed Club@NUV</a>
+           </li>
+
+           <li style="display: flex; align-items: center;">
+             <i class="fa fa-envelope" style="width: 25px; font-size: 1.2rem;"></i>
+             <a href="biomedclub@nuv.ac.in" style="margin-left: 8px;">biomedclub@nuv.ac.in</a>
+           </li>
+         </ul>
+      </div>
+
+      <div class="col-md-6 col-xs-12 developers-col" style="text-align: right;">
+        <h3 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; margin-top: 30px;">Developers of this website</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
+          <li>Bhavya Thakkar</li>
+          <li>Dev Bhatt</li>
+          <li>Hely Gandhi</li>
+          <li>Abhigna Bhatt</li>
+         
+        </ul>
+      </div>
+
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="by-b12" style="text-align: center; margin-top: 40px; border-top: 1px solid #333;">
+          &copy; 2026 BioMed Club. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// UPDATED JS COLOR LOGIC
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  // Refresh AOS to ensure animations work correctly with the new background
+  setTimeout(() => {
+    AOS.refresh();
+  }, 100);
+
+  if (document.body.classList.contains('dark-mode')) {
+    themeIcon.textContent = '☀️';
+    document.body.style.backgroundColor = '#000000';
+    document.body.style.color = '#ffffff';
+    document.getElementById('sb-navigation').style.setProperty('background-color', '#000000', 'important');
+  } else {
+    themeIcon.textContent = '🌙';
+    document.body.style.backgroundColor = '#ffffff';
+    document.body.style.color = '#333333';
+    document.getElementById('sb-navigation').style.background = '#ffffff';
+  }
+});
+    // Simple Mobile Navigation Toggle Script
+    $(document).ready(function() {
+      $('.sb-mobile-nav-btn').click(function() {
+        $('.sb-nav').toggleClass('active');
+        $(this).find('span').toggleClass('active');
+      });
+
+      // Smooth scroll for anchor links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 80 // Adjust for sticky header
+            }, 1000);
+            
+            // Close mobile menu on click
+            $('.sb-nav').removeClass('active');
+        }
+      });
+    });
+
+
+    let slideIndex = 0;
+let slideTimer;
+
+function showSlides() {
+  let slides = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  
+  clearTimeout(slideTimer);
+  slideTimer = setTimeout(showSlides, 5000); // 5 seconds
+}
+
+function plusSlides(n) {
+  slideIndex += n - 1;
+  showSlides();
+}
+
+// Start the slideshow
+showSlides();
+
+function initAboutSlideshows() {
+  const containers = document.querySelectorAll('.about-slideshow');
+  
+  containers.forEach(container => {
+    let slides = container.querySelectorAll('.about-slide');
+    let currentIndex = 0;
+    let speed = parseInt(container.getAttribute('data-speed')) || 3000;
+
+    setInterval(() => {
+      slides[currentIndex].classList.remove('active-slide');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active-slide');
+    }, speed);
+  });
+}
+
+// Call this after the page loads
+document.addEventListener('DOMContentLoaded', initAboutSlideshows);
+
+
+
+
+
+
+// --- COMMITTEE SYNCED SLIDESHOW LOGIC ---
+let commIndex = 1;
+showCommitteeSlides(commIndex);
+
+// Next/previous controls
+function plusCommitteeSlides(n) {
+  showCommitteeSlides(commIndex += n);
+}
+
+function showCommitteeSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("committee-img");
+  let texts = document.getElementsByClassName("committee-text");
+  
+  if (n > slides.length) {commIndex = 1}
+  if (n < 1) {commIndex = slides.length}
+  
+  // Hide all images
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  // Hide all texts
+  for (i = 0; i < texts.length; i++) {
+    texts[i].style.display = "none";
+  }
+  
+  // Show active image and text
+  slides[commIndex-1].style.display = "block";
+  texts[commIndex-1].style.display = "block";
+}
+ 
+  </script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // Initialize AOS
+  // Initialize AOS to trigger every time the element enters the viewport
+AOS.init({
+  duration: 800,
+  once: false,   // Changed from true to false so effects run again on scroll up/down
+  offset: 100,
+  mirror: true   // Allows elements to animate out while scrolling past them
+});
+
+
+  // as AOS now handles this.
+</script>
+</body>
+</html>
