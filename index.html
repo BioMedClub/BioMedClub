@@ -1126,7 +1126,35 @@ img {
       <div class="row">
         <div class="col-md-5 col-xs-12">
           <div class="contact-full__form" data-aos="zoom-in-right">
-            <iframe width="640px" height="480px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=MZq50dxZOUC5xPYWa2vwpJ4Z2lJljiFIkR-b4964hZxUNlUyTFlGVDVXNEFLN0NEWUc0OEFNNk9HTy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+           <form id="biomedForm" class="contact-full__form">
+  
+  <div class="form__group">
+    <label class="form__label">Full Name</label>
+    <input class="form__input" type="text" name="name" required>
+  </div>
+
+  <div class="form__group">
+    <label class="form__label">Email</label>
+    <input class="form__input" type="email" name="email" required>
+  </div>
+
+  <div class="form__group">
+    <label class="form__label">Phone</label>
+    <input class="form__input" type="tel" name="phone">
+  </div>
+
+  <div class="form__group">
+    <label class="form__label">Message</label>
+    <textarea class="form__input form__input--textarea" name="message"></textarea>
+  </div>
+
+  <button type="submit" class="sb-button sb-button--primary">
+    Submit
+  </button>
+
+  <p id="form-status" style="margin-top:15px;"></p>
+</form>
+
           </div>
         </div>
         
@@ -1364,6 +1392,7 @@ AOS.init({
 </body>
 
 </html>
+
 
 
 
