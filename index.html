@@ -784,6 +784,87 @@ img {
     margin-left: 0 !important; /* Resets the -20px margin */
   }
 }
+
+    /* --- NEW ADDITIONS FOR INGENIOUS PROBES --- */
+
+/* Navbar Dropdown Styles */
+.sb-nav__item { position: relative; } /* Ensure parent is relative */
+
+.sb-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 180px;
+  z-index: 9999;
+  border-radius: 4px;
+  padding: 10px 0;
+  border-top: 3px solid var(--clr-primary);
+}
+
+/* Show dropdown on hover */
+.sb-nav__item:hover .sb-dropdown-menu { display: block; }
+
+.sb-dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 0.9rem;
+  transition: 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.sb-dropdown-item:last-child { border-bottom: none; }
+
+.sb-dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: var(--clr-primary);
+  padding-left: 25px; /* slight slide effect */
+  text-decoration: none;
+}
+
+/* Dark Mode support for Dropdown */
+body.dark-mode .sb-dropdown-menu { background-color: #000; border: 1px solid #333; }
+body.dark-mode .sb-dropdown-item { color: #fff; border-bottom: 1px solid #333; }
+body.dark-mode .sb-dropdown-item:hover { background-color: #222; }
+
+/* Magazine Buttons (Hidden Section) */
+#magazine-buttons-container {
+  display: none; /* Hidden by default */
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mag-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 12px;
+  background-color: var(--clr-primary);
+  color: white !important;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.mag-btn:hover {
+  background-color: #fff;
+  color: var(--clr-primary) !important;
+  border-color: var(--clr-primary);
+  text-decoration: none;
+}
+body.dark-mode #magazine-buttons-container { background-color: #111; border-color: #333; }
  </style>
 </head>
 
@@ -811,6 +892,17 @@ img {
     <ul class="sb-nav__list">
       <li class="sb-nav__item"><a class="sb-nav__link" href="#home">Home</a></li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#about">About</a></li>
+      <li class="sb-nav__item">
+  <a class="sb-nav__link" href="#">Ingenious Probes ▾</a>
+  <div class="sb-dropdown-menu">
+    <a class="sb-dropdown-item" href="#">Issue 1</a>
+    <a class="sb-dropdown-item" href="#">Issue 2</a>
+    <a class="sb-dropdown-item" href="#">Issue 3</a>
+    <a class="sb-dropdown-item" href="#">Issue 4</a>
+    <a class="sb-dropdown-item" href="#">Issue 5</a>
+    <a class="sb-dropdown-item" href="#">Issue 6</a>
+  </div>
+</li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#events">Events</a></li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#gallery">Gallery</a></li>
       <li class="sb-nav__item sb-nav__btn">
@@ -1021,18 +1113,27 @@ img {
             </div>
           </div>
         </li>
-        <li class="items-grid__item">
-          <div class="items-grid__item-body">
-            <div class="items-grid__item-image">
-              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Magazine Launch">
-            </div>
-            <div class="items-grid__item-content">
-              <div class="items-grid__header">Biomedical science magazine launch</div>
-              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 1:00 PM</div>
-              <div class="items-grid__description">Discover groundbreaking research insights.</div>
-            </div>
-          </div>
-        </li>
+       <li class="items-grid__item">
+  <div class="items-grid__item-body" onclick="toggleMagazineButtons(event)" style="cursor: pointer;">
+    <div class="items-grid__item-image">
+      <img src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Magazine Launch">
+    </div>
+    <div class="items-grid__item-content">
+      <div class="items-grid__header">Ingenious Probes</div>
+      <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 1:00 PM</div>
+      <div class="items-grid__description">Click here to access previous issues.</div>
+    </div>
+    
+    <div id="magazine-buttons-container">
+      <a href="#" class="mag-btn">Issue 1</a>
+      <a href="#" class="mag-btn">Issue 2</a>
+      <a href="#" class="mag-btn">Issue 3</a>
+      <a href="#" class="mag-btn">Issue 4</a>
+      <a href="#" class="mag-btn">Issue 5</a>
+      <a href="#" class="mag-btn">Issue 6</a>
+    </div>
+  </div>
+</li>
       </ul>
     </div>
   </section>
@@ -1396,12 +1497,45 @@ AOS.init({
   mirror: true   // Allows elements to animate out while scrolling past them
 });
 
+/* --- FUNCTION FOR TOGGLING MAGAZINE BUTTONS --- */
+function toggleMagazineButtons(event) {
+  // Prevent click from bubbling up immediately
+  event.stopPropagation();
+  
+  const container = document.getElementById('magazine-buttons-container');
+  
+  if (container.style.display === "block") {
+    container.style.display = "none";
+  } else {
+    container.style.display = "block";
+  }
+}
 
+// Logic to hide the buttons on Scroll
+window.addEventListener('scroll', function() {
+  const container = document.getElementById('magazine-buttons-container');
+  if (container && container.style.display === "block") {
+    container.style.display = "none";
+  }
+});
+
+// Logic to hide buttons if clicking anywhere else outside
+document.addEventListener('click', function(event) {
+  const container = document.getElementById('magazine-buttons-container');
+  // If the click is NOT inside the magazine card
+  if (container && container.style.display === "block") {
+      // Check if the click target is the container itself or a child
+      if (!event.target.closest('.items-grid__item-body')) {
+          container.style.display = "none";
+      }
+  }
+});
   // as AOS now handles this.
 </script>
 </body>
 
 </html>
+
 
 
 
