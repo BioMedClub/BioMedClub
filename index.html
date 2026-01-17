@@ -115,62 +115,8 @@
     .sb-mobile-nav-btn span::before, .sb-mobile-nav-btn span::after {
       content: ''; position: absolute; width: 100%; height: 3px; background: #333; left: 0;
     }
-    .s.toggle-switch {
-  position: relative;
-  width: 50px;
-  height: 25px;
-  display: block !important; /* Forces visibility */
-  z-index: 1001; /* Keeps it above other elements */
-  margin-right: 10px;
-}
-
-.switch-label {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #28292c;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 2px solid #28292c;
-  display: block;
-}
-
-.checkbox {
-  opacity: 0; /* Changed from display:none to ensure it's clickable but invisible */
-  position: absolute;
-}
-
-
-.slider {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider {
-  background-color: #d8dbe0;
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 4px;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  box-shadow: inset 5px -2px 0px 0px #d8dbe0;
-  background-color: #28292c;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider::before {
-  transform: translateX(23px);
-  background-color: #f39c12;
-  box-shadow: none;
-}b-mobile-nav-btn span::before { top: -8px; }
-    .sb-mobile-nav-btn span::after { top: 8px; }
+ /* Fixed Mobile Nav Icon Spacing */
+    .sb-mobile-nav-btn span::before { top: -8px; }
 
     @media (max-width: 991px) {
       .sb-mobile-nav-btn { display: block; }
@@ -688,26 +634,60 @@ img {
 
 /* Committee Synced Slideshow Styles */
 /* --- REPLACED SECTION --- */
+/* --- UPDATED COMMITTEE STYLES --- */
+/* --- UPDATED COMMITTEE STYLES (Larger Version) --- */
 .committee-img-container {
   position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Matches your desktop preference */
+  max-width: 500px; /* Increased from 350px to 500px */
+  height: 550px;    /* Increased from 400px to 550px */
+  margin: 0 auto;   
   overflow: hidden;
   border-radius: 8px;
-  background-color: #f9f9f9; /* Background for any empty space */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Add this Mobile Fix */
+.committee-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* Mobile Adjustment - Keeps it viewable on phones */
 @media (max-width: 768px) {
   .committee-img-container {
-    height: 400px !important; /* Smaller fixed height for mobile */
+    height: 400px !important; 
+    max-width: 100%;
   }
-  .committee-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain !important; /* This ensures the WHOLE image is shown without cutting */
-  }
+}
+
+/* Custom Navigation Buttons - Strictly Inside Borders */
+.comm-prev, .comm-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Slightly larger buttons for larger images */
+  height: 50px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s ease;
+  user-select: none;
+  background-color: rgba(0,0,0,0.4); 
+  border-radius: 50%; 
+  z-index: 10;
+}
+
+.comm-prev { left: 15px; }  
+.comm-next { right: 15px; } 
+
+.comm-prev:hover, .comm-next:hover {
+  background-color: var(--clr-primary);
 }
 /* ------------------------ */
 
@@ -1060,7 +1040,7 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </section>
 
-  <section id="about" class="sb-section sb-section-opt-light">
+  <section id="about" class="sb-section sb-section-opt-light" style="padding-bottom: 10px;">
   <div class="container">
   <div class="row about-row" data-aos="fade-up">
     <div class="col-md-6 col-xs-12 about-text-col">
@@ -1100,14 +1080,10 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
       </div>
     </div>
   </div>
-  <div class="row about-row" data-aos="fade-up" style="margin-top: 60px;">
-    
-   <div class="row about-row" data-aos="fade-up" style="margin-top: 60px;">
+ <div class="row about-row" data-aos="fade-up" style="margin-top: 20px; margin-bottom: 20px;">
     
     <div class="col-md-6 col-xs-12 about-slide-col">
-      <div class="committee-img-c
-        ontainer">
-        
+      <div class="committee-img-container">
         <img class="committee-img fade" src="president.jpg" alt="President">
         <img class="committee-img fade" src="vicepresident.jpg" alt="Vice President">
         <img class="committee-img fade" src="secretary.jpg" alt="Secretary">
@@ -1187,7 +1163,7 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
       
      
 
-  <section id="events" class="sb-section sb-section-opt-light">
+ <section id="events" class="sb-section sb-section-opt-light" style="padding-top: 10px;">
     <div class="container">
       <div class="text-center" style="margin-bottom: 40px;">
         <h2 class="sb-section-title" data-aos="fade-up">Explore our activities</h2>
@@ -1730,7 +1706,6 @@ $(document).click(function() {
 </body>
 
 </html>
-
 
 
 
