@@ -1470,23 +1470,44 @@ toggleBtn.addEventListener('click', () => {
     let slideIndex = 0;
 let slideTimer;
 
-function showSlides() {
+// ADD THIS CORRECTED BLOCK
+function showSlides(n) {
+  let i;
   let slides = document.getElementsByClassName("mySlides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
   
+  // If manual navigation (n) is provided, update slideIndex
+  if (n !== undefined) {
+    slideIndex = n;
+  } else {
+    slideIndex++;
+  }
+
+  // Reset logic to prevent "black screen"
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex < 1) { slideIndex = slides.length; }
+
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Show active slide
+  slides[slideIndex - 1].style.display = "block";
+
+  // Reset timer
   clearTimeout(slideTimer);
-  slideTimer = setTimeout(showSlides, 5000); // 5 seconds
+  slideTimer = setTimeout(() => showSlides(), 5000);
 }
 
 function plusSlides(n) {
-  slideIndex += n - 1;
-  showSlides();
+  showSlides(slideIndex += n);
 }
+
+// Initialize the first slide properly
+document.addEventListener('DOMContentLoaded', () => {
+  slideIndex = 1;
+  showSlides(slideIndex);
+});
 
 // Start the slideshow
 showSlides();
@@ -1617,6 +1638,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
