@@ -137,7 +137,8 @@
     /* ITEMS GRID */
     .items-grid { display: flex; flex-wrap: wrap; margin: -15px; list-style: none; padding: 0; }
     .items-grid__item { padding: 15px; width: 100%; flex: 0 0 100%; }
-    @media(min-width: 768px) { .items-grid__item { flex: 0 0 33.333%; max-width: 33.333%; } }
+    @media(min-width: 992px) { .items-grid__item { flex: 0 0 25%; max-width: 25%; } }
+@media(min-width: 768px) and (max-width: 991px) { .items-grid__item { flex: 0 0 50%; max-width: 50%; } }
     
     .items-grid__item-body { display: block; height: 100%; background: #f9f9f9; transition: var(--transition); border-radius: 4px; overflow: hidden; }
     .items-grid__item-body:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -900,7 +901,6 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
     <a class="sb-dropdown-item" href="#">Issue 9</a>
   </div>
 </li>
-      <li class="sb-nav__item"><a class="sb-nav__link" href="#events">Events</a></li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#gallery">Gallery</a></li>
       <li class="sb-nav__item sb-nav__btn">
         <a class="sb-button sb-button--primary" href="#contact">Contact</a>
@@ -1078,66 +1078,68 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
       
      
 
- <section id="events" class="sb-section sb-section-opt-light" style="padding-top: 10px;">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 40px;">
-        <h2 class="sb-section-title" data-aos="fade-up">Explore our activities</h2>
-        <div class="sb-section-subtitle">Join us for exciting opportunities!</div>
-      </div>
+<section id="research" class="sb-section sb-section-opt-light" style="padding-top: 10px;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <h2 class="sb-section-title" data-aos="fade-up">Research Projects</h2>
+      <div class="sb-section-subtitle">Exploring the frontiers of Biomedical Sciences</div>
+    </div>
 
-      <ul class="items-grid">
-        <li class="items-grid__item">
-          <div class="items-grid__item-body">
-            <div class="items-grid__item-image">
-              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e76cc7e-8967-11f0-a1c9-0242ac110002-jpg-regular_image.jpeg" alt="Conference">
-            </div>
-            <div class="items-grid__item-content">
-              <div class="items-grid__header">Annual biomedical conference</div>
-              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 11:00 AM</div>
-              <div class="items-grid__description">Engage with biomedical professionals.</div>
-            </div>
+    <ul class="items-grid">
+      <li class="items-grid__item">
+        <div class="items-grid__item-body">
+          <div class="items-grid__item-image">
+            <img src="research1.jpg" alt="Research 1">
           </div>
-        </li>
-        <li class="items-grid__item">
-          <div class="items-grid__item-body">
-            <div class="items-grid__item-image">
-              <img src="https://cdn.b12.io/client_media/GiP6TxIV/9e93e3fe-8967-11f0-b107-0242ac110002-jpg-regular_image.jpeg" alt="Workshop">
-            </div>
-            <div class="items-grid__item-content">
-              <div class="items-grid__header">Interactive workshop series</div>
-              <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 12:00 PM</div>
-              <div class="items-grid__description">Hands-on learning experiences await you.</div>
-            </div>
+          <div class="items-grid__item-content">
+            <div class="items-grid__header">Gut-Brain Axis</div>
+            <div class="items-grid__description">Study on how the microbiome influences child neurodevelopment.</div>
+            <a href="link-to-paper1.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
           </div>
-        </li>
-       <li class="items-grid__item">
-  <div class="items-grid__item-body" onclick="toggleMagazineButtons(event)" style="cursor: pointer;">
-    <div class="items-grid__item-image">
-      <img src="https://cdn.b12.io/client_media/GiP6TxIV/9df2af34-8967-11f0-91f2-0242ac110002-jpg-regular_image.jpeg" alt="Magazine Launch">
-    </div>
-    <div class="items-grid__item-content">
-      <div class="items-grid__header">Ingenious Probers</div>
-      <div style="color: var(--clr-primary); font-weight: 500; margin-bottom: 10px;">June 1, 2026 at 1:00 PM</div>
-      <div class="items-grid__description">Click here to access previous issues.</div>
-    </div>
-    
-    <div id="magazine-buttons-container">
-      <a href="https://drive.google.com/file/d/1yeRexHGbTkaNED6yqMGuwQJf54qF61l5/view?usp=drive_link" class="mag-btn">Issue 1</a>
-      <a href="https://drive.google.com/file/d/1gXTJ_8X3iYUbg--3PvB95fkCeyOJVUec/view?usp=drive_link" class="mag-btn">Issue 2</a>
-      <a href="https://drive.google.com/file/d/15EZo7ZVcI8wtyVcTG-ZN9JI_pVjPUHgi/view?usp=drive_link" class="mag-btn">Issue 3</a>
-      <a href="https://drive.google.com/file/d/1oPhflaJh4YBRUx-epFpf4HvxJQ01NCvg/view?usp=drive_link" class="mag-btn">Issue 4</a>
-      <a href="https://drive.google.com/file/d/1Lpkv2oHFVkHZ4slLMfuF-9yjCKGN1K5C/view?usp=drive_link" class="mag-btn">Issue 5</a>
-      <a href="https://drive.google.com/file/d/1NRF-M745P0roof18slwQsDRHbXmB_ggJ/view?usp=drive_link" class="mag-btn">Issue 6</a>
-      <a href="https://drive.google.com/file/d/1HP4folv0Y5gh6R1HCf9XdD-5p9wWLubr/view?usp=drive_link" class="mag-btn">Issue 7</a>
-      <a href="https://drive.google.com/file/d/1zLr8jA5T9074mg10fcVsVx9myQeo2BoQ/view?usp=drive_link" class="mag-btn">Issue 8</a>
-      <a href="#" class="mag-btn">Issue 9</a>
-    </div>
+        </div>
+      </li>
+      
+      <li class="items-grid__item">
+        <div class="items-grid__item-body">
+          <div class="items-grid__item-image">
+            <img src="research2.jpg" alt="Research 2">
+          </div>
+          <div class="items-grid__item-content">
+            <div class="items-grid__header">Gestational Diabetes</div>
+            <div class="items-grid__description">The role of epigenetics in metabolic health during pregnancy.</div>
+            <a href="link-to-paper2.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="items-grid__item">
+        <div class="items-grid__item-body">
+          <div class="items-grid__item-image">
+            <img src="research3.jpg" alt="Research 3">
+          </div>
+          <div class="items-grid__item-content">
+            <div class="items-grid__header">Phytoremediation</div>
+            <div class="items-grid__description">Using Ayurvedic medicinal plants to clean contaminated soil.</div>
+            <a href="link-to-paper3.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="items-grid__item">
+        <div class="items-grid__item-body">
+          <div class="items-grid__item-image">
+            <img src="research4.jpg" alt="Research 4">
+          </div>
+          <div class="items-grid__item-content">
+            <div class="items-grid__header">Molecular Biology</div>
+            <div class="items-grid__description">Advances in bacterial virulence and capsid symmetry research.</div>
+            <a href="link-to-paper4.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
-</li>
-      </ul>
-    </div>
-  </section>
-
+</section>
   <section id="gallery" class="sb-section sb-section-opt-light" style="background-color: #f8f9fa;">
   <div class="container">
     <div class="text-center" style="margin-bottom: 40px;">
@@ -1642,6 +1644,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
