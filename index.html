@@ -859,6 +859,68 @@ body.dark-mode .dev-role { color: #aaa !important; }
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+    /* --- RESEARCH HORIZONTAL SCROLL --- */
+.research-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  padding: 20px 10px 40px 10px;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Increased width to 400px as requested */
+.research-card {
+  flex: 0 0 400px; 
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.research-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-footer-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--clr-primary);
+  color: #fff !important;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.research-footer-btn:hover {
+  background-color: var(--clr-primary-dark);
+  text-decoration: none;
+}
+
+/* Dark Mode support */
+body.dark-mode .research-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+}
+
+.research-scroll-container::-webkit-scrollbar { height: 10px; }
+.research-scroll-container::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 10px; }
 body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
  </style>
 </head>
@@ -1081,63 +1143,61 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
 <section id="research" class="sb-section sb-section-opt-light" style="padding-top: 10px;">
   <div class="container">
     <div class="text-center" style="margin-bottom: 40px;">
-      <h2 class="sb-section-title" data-aos="fade-up">Research Projects</h2>
-      <div class="sb-section-subtitle">Exploring the frontiers of Biomedical Sciences</div>
+ <h2 class="sb-section-title" data-aos="fade-up">Research Papers</h2>
+<div class="sb-section-subtitle">Explore our latest scientific contributions</div>
+
+<ul class="items-grid">
+  <li class="items-grid__item">
+    <div class="items-grid__item-body">
+      <div class="items-grid__item-image"><img src="nuv4.jpeg" alt="Research"></div>
+      <div class="items-grid__item-content">
+        <div class="items-grid__header">title</div>
+        <div class="items-grid__description">summary</div>
+      </div>
+      <a href="RESEARCH_LINK_1" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Click here to know more</a>
     </div>
-
-    <ul class="items-grid">
-      <li class="items-grid__item">
-        <div class="items-grid__item-body">
-          <div class="items-grid__item-image">
-            <img src="research1.jpg" alt="Research 1">
-          </div>
-          <div class="items-grid__item-content">
-            <div class="items-grid__header">title</div>
-            <div class="items-grid__description">summary</div>
-            <a href="link-to-paper1.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
-          </div>
-        </div>
-      </li>
-      
-      <li class="items-grid__item">
-        <div class="items-grid__item-body">
-          <div class="items-grid__item-image">
-            <img src="research2.jpg" alt="Research 2">
-          </div>
-          <div class="items-grid__item-content">
-            <div class="items-grid__header">title</div>
-            <div class="items-grid__description">summary</div>
-            <a href="link-to-paper2.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="items-grid__item">
-        <div class="items-grid__item-body">
-          <div class="items-grid__item-image">
-            <img src="research3.jpg" alt="Research 3">
-          </div>
-          <div class="items-grid__item-content">
-            <div class="items-grid__header">title</div>
-            <div class="items-grid__description">summary</div>
-            <a href="link-to-paper3.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="items-grid__item">
-        <div class="items-grid__item-body">
-          <div class="items-grid__item-image">
-            <img src="research4.jpg" alt="Research 4">
-          </div>
-          <div class="items-grid__item-content">
-            <div class="items-grid__header">title</div>
-            <div class="items-grid__description">summary</div>
-            <a href="link-to-paper4.pdf" target="_blank" class="sb-button sb-button--primary" style="width: 100%; margin-top: 15px; font-size: 0.8rem; padding: 10px;">Click here to know more</a>
-          </div>
-        </div>
-      </li>
-    </ul>
+  </li>
+  <li class="items-grid__item">
+    <div class="items-grid__item-body">
+      <div class="items-grid__item-image"><img src="sos1.jpeg" alt="Research"></div>
+      <div class="items-grid__item-content">
+        <div class="items-grid__header">title</div>
+        <div class="items-grid__description">summary</div>
+      </div>
+      <a href="RESEARCH_LINK_2" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Click here to know more</a>
+    </div>
+  </li>
+  <li class="items-grid__item">
+    <div class="items-grid__item-body">
+      <div class="items-grid__item-image"><img src="nuv3.jpeg" alt="Research"></div>
+      <div class="items-grid__item-content">
+        <div class="items-grid__header">title</div>
+        <div class="items-grid__description">summary</div>
+      </div>
+      <a href="RESEARCH_LINK_3" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Click here to know more</a>
+    </div>
+  </li>
+  <li class="items-grid__item">
+    <div class="items-grid__item-body">
+      <div class="items-grid__item-image"><img src="sos4.JPG" alt="Research"></div>
+      <div class="items-grid__item-content">
+        <div class="items-grid__header">title</div>
+        <div class="items-grid__description">summary</div>
+      </div>
+      <a href="RESEARCH_LINK_4" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Click here to know more</a>
+    </div>
+  </li>
+  <li class="items-grid__item">
+    <div class="items-grid__item-body">
+      <div class="items-grid__item-image"><img src="nuv1.jpeg" alt="Research"></div>
+      <div class="items-grid__item-content">
+        <div class="items-grid__header">title</div>
+        <div class="items-grid__description">summary</div>
+      </div>
+      <a href="RESEARCH_LINK_5" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Click here to know more</a>
+    </div>
+  </li>
+</ul>
   </div>
 </section>
   <section id="gallery" class="sb-section sb-section-opt-light" style="background-color: #f8f9fa;">
@@ -1644,6 +1704,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
