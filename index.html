@@ -860,20 +860,19 @@ body.dark-mode .dev-role { color: #aaa !important; }
   letter-spacing: 1px;
 }
     /* --- RESEARCH HORIZONTAL SCROLL --- */
-/* Add this to your <style> section */
+/* --- RESEARCH HORIZONTAL SCROLL UPDATED --- */
 .research-scroll-wrapper {
   display: flex;
   overflow-x: auto;
   gap: 25px;
   padding: 20px 10px 40px 10px;
   scroll-behavior: smooth;
-  flex-wrap: nowrap; /* Prevents wrapping to next line */
+  flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Increased width for Research Cards */
 .research-card-item {
-  flex: 0 0 450px; /* Increased width to 450px */
+  flex: 0 0 450px; /* Desktop width */
   background: #f9f9f9;
   border-radius: 8px;
   overflow: hidden;
@@ -883,17 +882,37 @@ body.dark-mode .dev-role { color: #aaa !important; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.research-card-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Ensures "Read More" button stays at the bottom regardless of text length */
+.research-card-item .items-grid__item-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Custom Scrollbar for Research */
-.research-scroll-wrapper::-webkit-scrollbar { height: 10px; }
-.research-scroll-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-.research-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 10px; }
+.research-card-item .items-grid__description {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
 
-/* Dark Mode support */
+/* MOBILE FIX: One single grid completely visible */
+@media (max-width: 768px) {
+  .research-card-item {
+    flex: 0 0 calc(100vw - 40px); /* Sets width to full screen minus padding */
+    max-width: calc(100vw - 40px);
+  }
+  
+  .research-scroll-wrapper {
+    gap: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-snap-type: x mandatory; /* Makes it snap to the center of the screen */
+  }
+
+  .research-card-item {
+    scroll-snap-align: center;
+  }
+}
+
 body.dark-mode .research-card-item {
   background: #1a1a1a;
   border: 1px solid #333;
@@ -1118,59 +1137,57 @@ body.dark-mode .research-card-item {
 
 <section id="research" class="sb-section sb-section-opt-light" style="padding-top: 10px;">
   <div class="container">
-<div class="container">
-  <div class="text-center" style="margin-bottom: 40px;">
-    <h2 class="sb-section-title" data-aos="fade-up">Research Papers</h2>
-    <div class="sb-section-subtitle">Explore our latest scientific contributions</div>
-  </div>
-
-  <div class="research-scroll-wrapper">
-    <div class="research-card-item">
-      <div class="items-grid__item-image"><img src="nuv4.jpeg" alt="Research"></div>
-      <div class="items-grid__item-content">
-        <div class="items-grid__header">Deciphering protein–DNA interactions of KISS1 with transcription factors through molecular docking, molecular dynamics simulations, and gene expression analysis</div>
-        <div class="items-grid__description">This Paper by Pranav Pillai(BMS 2026 batch) shows that how overall, KISS1 demonstrates strong potential as a transcriptional regulator and therapeutic agent against TNBC metastasis.</div>
-      </div>
-      <a href="https://www.tandfonline.com/doi/abs/10.1080/07391102.2025.2553344" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
+    <div class="text-center" style="margin-bottom: 40px;">
+      <h2 class="sb-section-title" data-aos="fade-up">Research Papers</h2>
+      <div class="sb-section-subtitle">Explore our latest scientific contributions</div>
     </div>
 
-    <div class="research-card-item">
-      <div class="items-grid__item-image"><img src="sos1.jpeg" alt="Research"></div>
-      <div class="items-grid__item-content">
-        <div class="items-grid__header">Nanotechnology in gynaecological cancers: Biomedical perspectives on lipid-based drug delivery systems for targeted therapy</div>
-        <div class="items-grid__description">This Paper by Ridhima Suthar(BMS 2026 batch) highlights recent advancements in lipid-based nanocarriers, emphasizing their biomedical relevance and therapeutic potential in the targeted management of prevalent gynaecological cancers.</div>
+    <div class="research-scroll-wrapper">
+      <div class="research-card-item">
+        <div class="items-grid__item-image"><img src="nuv4.jpeg" alt="Research"></div>
+        <div class="items-grid__item-content">
+          <div class="items-grid__header">Deciphering protein–DNA interactions of KISS1 with transcription factors through molecular docking, molecular dynamics simulations, and gene expression analysis</div>
+          <div class="items-grid__description">This Paper by Pranav Pillai(BMS 2026 batch) shows that how overall, KISS1 demonstrates strong potential as a transcriptional regulator and therapeutic agent against TNBC metastasis.</div>
+        </div>
+        <a href="https://www.tandfonline.com/doi/abs/10.1080/07391102.2025.2553344" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
       </div>
-      <a href="LINK_2" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
-    </div>
 
-    <div class="research-card-item">
-      <div class="items-grid__item-image"><img src="nuv3.jpeg" alt="Research"></div>
-      <div class="items-grid__item-content">
-        <div class="items-grid__header">Cancer Stem Cell Regulation as a Target of Therapeutic Intervention: Insights into Breast, Cervical and Lung Cancer</div>
-        <div class="items-grid__description">This Paper by Naman Oza,Mohit Majmudar and Netra Patel (BMS 2025 batch) shows how research related to nanobiotechnology can also play a significant role in diagnosis and treatment purpose targeting CSCs, as nanomaterials can be used for precise targeting and identification of CSCs.</div>
+      <div class="research-card-item">
+        <div class="items-grid__item-image"><img src="sos1.jpeg" alt="Research"></div>
+        <div class="items-grid__item-content">
+          <div class="items-grid__header">Nanotechnology in gynaecological cancers: Biomedical perspectives on lipid-based drug delivery systems for targeted therapy</div>
+          <div class="items-grid__description">This Paper by Ridhima Suthar(BMS 2026 batch) highlights recent advancements in lipid-based nanocarriers, emphasizing their biomedical relevance and therapeutic potential in the targeted management of prevalent gynaecological cancers.</div>
+        </div>
+        <a href="LINK_2" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
       </div>
-      <a href="LINK_3" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
-    </div>
 
-    <div class="research-card-item">
-      <div class="items-grid__item-image"><img src="sos4.JPG" alt="Research"></div>
-      <div class="items-grid__item-content">
-        <div class="items-grid__header">Development of a Novel Aluminium Chloride-Induced Zebrafish Model of Alzheimer’s Disease: Involvement of Oxidative Stress, Cholinergic Dysfunction, and Gut Pathophysiology</div>
-        <div class="items-grid__description">This paper by Rutvi Vaja and Mariya Vohra(BMS 2024 batch) explores a novel and cost-effective model that provides a comprehensive platform for exploring sex-mediated neurotoxicity experimental animal model and offers potential utility for screening therapeutic interventions and understanding disease-modifying mechanisms..</div>
+      <div class="research-card-item">
+        <div class="items-grid__item-image"><img src="nuv3.jpeg" alt="Research"></div>
+        <div class="items-grid__item-content">
+          <div class="items-grid__header">Cancer Stem Cell Regulation as a Target of Therapeutic Intervention: Insights into Breast, Cervical and Lung Cancer</div>
+          <div class="items-grid__description">This Paper by Naman Oza, Mohit Majmudar and Netra Patel (BMS 2025 batch) shows how research related to nanobiotechnology can also play a significant role in diagnosis and treatment purpose targeting CSCs.</div>
+        </div>
+        <a href="LINK_3" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
       </div>
-      <a href="LINK_4" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
-    </div>
 
-    <div class="research-card-item">
-      <div class="items-grid__item-image"><img src="nuv1.jpeg" alt="Research"></div>
-      <div class="items-grid__item-content">
-        <div class="items-grid__header">Exploring synergistic contamination of heavy metals and microplastics in marine edible fishes and associated risk status in humans</div>
-        <div class="items-grid__description">This paper by Prince Upadhyay,Vyomil Patel,Tejas Gurjar and Rahul Ladumor(BMS 2023 batch) potrays the urgent need for pollution mitigation strategies to safeguard marine biodiversity and public health interventions for seafood consumers..</div>
+      <div class="research-card-item">
+        <div class="items-grid__item-image"><img src="sos4.JPG" alt="Research"></div>
+        <div class="items-grid__item-content">
+          <div class="items-grid__header">Development of a Novel Aluminium Chloride-Induced Zebrafish Model of Alzheimer’s Disease</div>
+          <div class="items-grid__description">This paper by Rutvi Vaja and Mariya Vohra(BMS 2024 batch) explores a novel and cost-effective model that provides a comprehensive platform for exploring sex-mediated neurotoxicity.</div>
+        </div>
+        <a href="LINK_4" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
       </div>
-      <a href="LINK_5" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
+
+      <div class="research-card-item">
+        <div class="items-grid__item-image"><img src="nuv1.jpeg" alt="Research"></div>
+        <div class="items-grid__item-content">
+          <div class="items-grid__header">Exploring synergistic contamination of heavy metals and microplastics in marine edible fishes</div>
+          <div class="items-grid__description">This paper by Prince Upadhyay, Vyomil Patel, Tejas Gurjar and Rahul Ladumor(BMS 2023 batch) portrays the urgent need for pollution mitigation strategies to safeguard marine biodiversity.</div>
+        </div>
+        <a href="LINK_5" class="sb-button sb-button--primary" style="border-radius:0; width:100%;">Read More</a>
+      </div>
     </div>
-  </div>
-</div>
   </div>
 </section>
   <section id="gallery" class="sb-section sb-section-opt-light" style="background-color: #f8f9fa;">
@@ -1677,6 +1694,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
