@@ -860,19 +860,20 @@ body.dark-mode .dev-role { color: #aaa !important; }
   letter-spacing: 1px;
 }
     /* --- RESEARCH HORIZONTAL SCROLL --- */
-.research-scroll-container {
+/* Add this to your <style> section */
+.research-scroll-wrapper {
   display: flex;
   overflow-x: auto;
   gap: 25px;
   padding: 20px 10px 40px 10px;
   scroll-behavior: smooth;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Prevents wrapping to next line */
   -webkit-overflow-scrolling: touch;
 }
 
-/* Increased width to 400px as requested */
-.research-card {
-  flex: 0 0 400px; 
+/* Increased width for Research Cards */
+.research-card-item {
+  flex: 0 0 450px; /* Increased width to 450px */
   background: #f9f9f9;
   border-radius: 8px;
   overflow: hidden;
@@ -882,46 +883,21 @@ body.dark-mode .dev-role { color: #aaa !important; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.research-card:hover {
+.research-card-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.research-content {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.research-footer-btn {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  background-color: var(--clr-primary);
-  color: #fff !important;
-  text-align: center;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  transition: background 0.3s;
-}
-
-.research-footer-btn:hover {
-  background-color: var(--clr-primary-dark);
-  text-decoration: none;
-}
+/* Custom Scrollbar for Research */
+.research-scroll-wrapper::-webkit-scrollbar { height: 10px; }
+.research-scroll-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.research-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 10px; }
 
 /* Dark Mode support */
-body.dark-mode .research-card {
+body.dark-mode .research-card-item {
   background: #1a1a1a;
   border: 1px solid #333;
 }
-
-.research-scroll-container::-webkit-scrollbar { height: 10px; }
-.research-scroll-container::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 10px; }
-body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
  </style>
 </head>
 
@@ -1198,6 +1174,7 @@ body.dark-mode .dev-group-title { color: var(--clr-secondary) !important; }
     </div>
   </li>
 </ul>
+    </div>
   </div>
 </section>
   <section id="gallery" class="sb-section sb-section-opt-light" style="background-color: #f8f9fa;">
@@ -1704,6 +1681,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
