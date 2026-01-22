@@ -861,6 +861,7 @@ body.dark-mode .dev-role { color: #aaa !important; }
 }
     /* --- RESEARCH HORIZONTAL SCROLL --- */
 /* --- RESEARCH HORIZONTAL SCROLL UPDATED --- */
+/* --- RESEARCH SECTION UPDATED --- */
 .research-scroll-wrapper {
   display: flex;
   overflow-x: auto;
@@ -869,53 +870,51 @@ body.dark-mode .dev-role { color: #aaa !important; }
   scroll-behavior: smooth;
   flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
+  /* Adds snapping so cards lock into place on mobile */
+  scroll-snap-type: x mandatory; 
 }
 
 .research-card-item {
-  flex: 0 0 450px; /* Desktop width */
+  flex: 0 0 450px; /* Keep laptop width same */
   background: #f9f9f9;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack image, text, button */
   transition: var(--transition);
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Ensures "Read More" button stays at the bottom regardless of text length */
+/* Forces content to fill space so button stays at the bottom */
 .research-card-item .items-grid__item-content {
-  flex-grow: 1;
+  flex: 1; 
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .research-card-item .items-grid__description {
-  flex-grow: 1;
+  flex: 1;
   margin-bottom: 15px;
 }
 
-/* MOBILE FIX: One single grid completely visible */
+/* MOBILE SPECIFIC FIX */
 @media (max-width: 768px) {
   .research-card-item {
-    flex: 0 0 calc(100vw - 40px); /* Sets width to full screen minus padding */
-    max-width: calc(100vw - 40px);
-  }
-  
-  .research-scroll-wrapper {
-    gap: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
-    scroll-snap-type: x mandatory; /* Makes it snap to the center of the screen */
-  }
-
-  .research-card-item {
+    /* Decreased width to fit mobile screen and see 1 whole card */
+    flex: 0 0 85vw; 
+    max-width: 85vw;
+    /* Increased length (height) as requested */
+    min-height: 550px; 
+    margin-right: 15px;
     scroll-snap-align: center;
   }
-}
 
-body.dark-mode .research-card-item {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  .research-scroll-wrapper {
+    gap: 10px;
+    padding-left: 7.5vw; /* Centers the active card */
+    padding-right: 7.5vw;
+  }
 }
  </style>
 </head>
@@ -1694,6 +1693,7 @@ $(document).click(function() {
 </body>
 
 </html>
+
 
 
 
