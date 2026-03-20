@@ -242,6 +242,24 @@ body.dark-mode .sb-mobile-nav-btn span::before,
 body.dark-mode .sb-mobile-nav-btn span::after {
   background: #ffffff !important; /* Makes the "hamburger" menu icon white */
 }
+@media (max-width: 991px) {
+  /* Forces the nested menus to display vertically when active */
+  .sb-dropdown-visible, 
+  .sb-nested-visible {
+    display: block !important;
+    position: relative !important;
+    left: 0 !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    background-color: rgba(0,0,0,0.05) !important; /* Slight tint to show depth */
+  }
+
+  /* Indent the specific editions so they look nested */
+  .sb-nested-dropdown .sb-dropdown-item {
+    padding-left: 40px !important;
+    font-size: 0.85rem !important;
+  }
+}
 
 .slideshow-container {
   position: relative;
@@ -1596,7 +1614,24 @@ function showSlides(n) {
   } else {
     slideIndex++;
   }
+$(document).ready(function() {
+  // Toggle the main "Magazines" dropdown on mobile tap
+  $('.sb-nav__item > a').on('click', function(e) {
+    if ($(window).width() < 992 && $(this).text().includes('Magazines')) {
+      e.preventDefault();
+      $(this).next('.sb-dropdown-menu').toggleClass('sb-dropdown-visible');
+    }
+  });
 
+  // Toggle "Bio Buzz" and "Ingenious Probers" sub-menus on mobile tap
+  $('.sb-submenu-parent > a').on('click', function(e) {
+    if ($(window).width() < 992) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevents the parent menu from closing
+      $(this).next('.sb-nested-dropdown').toggleClass('sb-nested-visible');
+    }
+  });
+});
   // Reset logic to prevent "black screen"
   if (slideIndex > slides.length) { slideIndex = 1; }
   if (slideIndex < 1) { slideIndex = slides.length; }
