@@ -202,7 +202,37 @@ body.dark-mode .items-grid__item-body {
 body.dark-mode .sb-nav__link {
   color: #ffffff !important;
 }
+/* Remove dots and fix spacing */
+.sb-dropdown-menu, .sb-nested-dropdown {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
+/* Desktop: Side-by-side dropdowns */
+@media (min-width: 992px) {
+  .sb-submenu-parent { position: relative; }
+  .sb-nested-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-left: 3px solid var(--clr-primary);
+  }
+  .sb-submenu-parent:hover > .sb-nested-dropdown { display: block; }
+}
+
+/* Mobile: Stacked dropdowns */
+@media (max-width: 991px) {
+  .sb-nested-dropdown { display: none; background: #f1f1f1; }
+  .sb-nested-visible { display: block !important; }
+  .sb-nested-dropdown .sb-dropdown-item { padding-left: 40px !important; }
+}
+
+body.dark-mode .sb-nested-dropdown { background: #111 !important; }
 
 /* DARK MODE FOOTER FIX - UPDATED */
 body.dark-mode #sb-footer {
@@ -1006,20 +1036,20 @@ body.dark-mode .dev-role { color: #aaa !important; }
     <ul class="sb-nav__list">
       <li class="sb-nav__item"><a class="sb-nav__link" href="#home">Home</a></li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#about">About</a></li>
-      <li class="sb-nav__item">
-  <a class="sb-nav__link" href="#">Magazines ▾</a>
+    <li class="sb-nav__item">
+  <a class="sb-nav__link magazines-toggle" href="#">Magazines ▾</a>
   <ul class="sb-dropdown-menu">
     <li class="sb-submenu-parent">
-      <a class="sb-dropdown-item" href="#">Bio Buzz ▸</a>
+      <a class="sb-dropdown-item" href="#">Bio Buzz <span style="float:right">▸</span></a>
       <ul class="sb-nested-dropdown">
         <li><a class="sb-dropdown-item" href="#">Edition 1</a></li>
         <li><a class="sb-dropdown-item" href="#">Edition 2</a></li>
         <li><a class="sb-dropdown-item" href="#">Edition 3</a></li>
       </ul>
     </li>
-   <li class="sb-submenu-parent">
-  <a class="sb-dropdown-item" href="#">Ingenious Probers <span style="float: right;">&nbsp;▸</span></a>
-  <ul class="sb-nested-dropdown">
+    <li class="sb-submenu-parent">
+      <a class="sb-dropdown-item" href="#">Ingenious Probers <span style="float:right">▸</span></a>
+      <ul class="sb-nested-dropdown">
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1yeRexHGbTkaNED6yqMGuwQJf54qF61l5/view?usp=sharing">Issue 1</a></li>
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1gXTJ_8X3iYUbg--3PvB95fkCeyOJVUec/view?usp=drive_link">Issue 2</a></li>
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/15EZo7ZVcI8wtyVcTG-ZN9JI_pVjPUHgi/view?usp=drive_link">Issue 3</a></li>
@@ -1787,17 +1817,25 @@ $('.sb-submenu-parent > a').click(function(e) {
 });
 
   /* --- INGENIOUS PROBES TOGGLE --- */
-$('#ingenious-btn').click(function(e) {
-  e.preventDefault(); // Prevents jumping to top of page
-  e.stopPropagation(); // Prevents other clicks from interfering
-  
-  // Toggle the class that shows/hides the menu
-  $(this).next('.sb-dropdown-menu').toggleClass('sb-dropdown-visible');
-});
+/* FIXED MAGAZINE TOGGLE FOR MOBILE */
+$(document).ready(function() {
+  // Toggle the main "Magazines" menu
+  $('.magazines-toggle').on('click', function(e) {
+    if ($(window).width() < 992) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).next('.sb-dropdown-menu').toggleClass('sb-dropdown-visible');
+    }
+  });
 
-// Optional: Close dropdown if clicking anywhere else on the page
-$(document).click(function() {
-  $('.sb-dropdown-menu').removeClass('sb-dropdown-visible');
+  // Toggle Bio Buzz / Ingenious Probers sub-menus
+  $('.sb-submenu-parent > a').on('click', function(e) {
+    if ($(window).width() < 992) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).next('.sb-nested-dropdown').toggleClass('sb-nested-visible');
+    }
+  });
 });
   // as AOS now handles this.
 </script>
