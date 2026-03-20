@@ -692,7 +692,41 @@ img {
   padding: 10px 0;
   border-top: 3px solid var(--clr-primary);
 }
+/* Ensure the main dropdown items can contain nested menus */
+.sb-submenu-parent { position: relative; list-style: none; }
 
+.sb-nested-dropdown {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Positions the 3rd level to the right of the 2nd level */
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 150px;
+  padding: 0;
+  border-left: 2px solid var(--clr-primary);
+}
+
+/* Hover logic for Desktop */
+@media (min-width: 992px) {
+  .sb-submenu-parent:hover > .sb-nested-dropdown {
+    display: block;
+  }
+}
+
+/* Mobile Adjustments: Stack them vertically */
+@media (max-width: 991px) {
+  .sb-nested-dropdown {
+    position: relative;
+    left: 0;
+    box-shadow: none;
+    background-color: #f1f1f1;
+    padding-left: 15px;
+  }
+  .sb-nested-visible { display: block !important; }
+}
+
+body.dark-mode .sb-nested-dropdown { background-color: #111; border-color: var(--clr-primary); }
 /* Show dropdown on hover */
 /* 1. Only allow Hover on Desktop (Laptops) */
 @media (min-width: 992px) {
@@ -944,18 +978,31 @@ body.dark-mode .dev-role { color: #aaa !important; }
       <li class="sb-nav__item"><a class="sb-nav__link" href="#home">Home</a></li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#about">About</a></li>
       <li class="sb-nav__item">
- <a class="sb-nav__link" id="ingenious-btn" href="ingenious-btn">Ingenious Probers ▾</a>
-  <div class="sb-dropdown-menu">
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1yeRexHGbTkaNED6yqMGuwQJf54qF61l5/view?usp=sharing">Issue 1</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1gXTJ_8X3iYUbg--3PvB95fkCeyOJVUec/view?usp=drive_link">Issue 2</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/15EZo7ZVcI8wtyVcTG-ZN9JI_pVjPUHgi/view?usp=drive_link">Issue 3</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1oPhflaJh4YBRUx-epFpf4HvxJQ01NCvg/view?usp=drive_link">Issue 4</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1NRF-M745P0roof18slwQsDRHbXmB_ggJ/view?usp=drive_link">Issue 5</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1NRF-M745P0roof18slwQsDRHbXmB_ggJ/view?usp=drive_link">Issue 6</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1HP4folv0Y5gh6R1HCf9XdD-5p9wWLubr/view?usp=drive_link">Issue 7</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1zLr8jA5T9074mg10fcVsVx9myQeo2BoQ/view?usp=drive_link">Issue 8</a>
-    <a class="sb-dropdown-item" href="https://drive.google.com/file/d/1oWeJhLkjLjbzsmOF6s4eTbGqhCiqBvc5/view?usp=drive_link">Issue 9</a>
-  </div>
+  <a class="sb-nav__link" href="#">Magazines ▾</a>
+  <ul class="sb-dropdown-menu">
+    <li class="sb-submenu-parent">
+      <a class="sb-dropdown-item" href="#">Bio Buzz ▸</a>
+      <ul class="sb-nested-dropdown">
+        <li><a class="sb-dropdown-item" href="#">Edition 1</a></li>
+        <li><a class="sb-dropdown-item" href="#">Edition 2</a></li>
+        <li><a class="sb-dropdown-item" href="#">Edition 3</a></li>
+      </ul>
+    </li>
+    <li class="sb-submenu-parent">
+      <a class="sb-dropdown-item" href="#">Ingenious Probers ▸</a>
+      <ul class="sb-nested-dropdown">
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1yeRexHGbTkaNED6yqMGuwQJf54qF61l5/view?usp=sharing">Issue 1</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1gXTJ_8X3iYUbg--3PvB95fkCeyOJVUec/view?usp=drive_link">Issue 2</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/15EZo7ZVcI8wtyVcTG-ZN9JI_pVjPUHgi/view?usp=drive_link">Issue 3</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1oPhflaJh4YBRUx-epFpf4HvxJQ01NCvg/view?usp=drive_link">Issue 4</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1NRF-M745P0roof18slwQsDRHbXmB_ggJ/view?usp=drive_link">Issue 5</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1NRF-M745P0roof18slwQsDRHbXmB_ggJ/view?usp=drive_link">Issue 6</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1HP4folv0Y5gh6R1HCf9XdD-5p9wWLubr/view?usp=drive_link">Issue 7</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1zLr8jA5T9074mg10fcVsVx9myQeo2BoQ/view?usp=drive_link">Issue 8</a></li>
+        <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1oWeJhLkjLjbzsmOF6s4eTbGqhCiqBvc5/view?usp=drive_link">Issue 9</a></li>
+      </ul>
+    </li>
+  </ul>
 </li>
       <li class="sb-nav__item"><a class="sb-nav__link" href="#gallery">Gallery</a></li>
       <li class="sb-nav__item sb-nav__btn">
@@ -1674,6 +1721,22 @@ document.addEventListener('click', function(event) {
       if (!event.target.closest('.items-grid__item-body')) {
           container.style.display = "none";
       }
+  }
+});
+  /* Handle Main Magazine Toggle */
+$('.sb-nav__link').click(function(e) {
+  if ($(window).width() < 992 && $(this).text().includes('Magazines')) {
+    e.preventDefault();
+    $(this).next('.sb-dropdown-menu').toggleClass('sb-dropdown-visible');
+  }
+});
+
+/* Handle Sub-menu (Bio Buzz / Ingenious) Toggle on Mobile */
+$('.sb-submenu-parent > a').click(function(e) {
+  if ($(window).width() < 992) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).next('.sb-nested-dropdown').toggleClass('sb-nested-visible');
   }
 });
 
