@@ -693,40 +693,51 @@ img {
   border-top: 3px solid var(--clr-primary);
 }
 /* Ensure the main dropdown items can contain nested menus */
-.sb-submenu-parent { position: relative; list-style: none; }
-
+/* Remove dots/bullets from all dropdown lists */
+.sb-dropdown-menu, 
 .sb-nested-dropdown {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%; /* Positions the 3rd level to the right of the 2nd level */
-  background-color: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  min-width: 150px;
-  padding: 0;
-  border-left: 2px solid var(--clr-primary);
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* Hover logic for Desktop */
+/* Fix Ingenious Probers alignment */
+.sb-submenu-parent {
+  position: relative;
+  list-style: none;
+}
+
+.sb-submenu-parent > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+}
+
+/* Position the nested editions to the right on desktop */
 @media (min-width: 992px) {
+  .sb-nested-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Moves it to the side of the parent menu */
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-left: 3px solid var(--clr-primary);
+    z-index: 10000;
+  }
+
   .sb-submenu-parent:hover > .sb-nested-dropdown {
     display: block;
   }
 }
 
-/* Mobile Adjustments: Stack them vertically */
-@media (max-width: 991px) {
-  .sb-nested-dropdown {
-    position: relative;
-    left: 0;
-    box-shadow: none;
-    background-color: #f1f1f1;
-    padding-left: 15px;
-  }
-  .sb-nested-visible { display: block !important; }
+/* Dark mode compatibility */
+body.dark-mode .sb-nested-dropdown {
+  background-color: #000;
+  border-color: var(--clr-primary);
 }
-
-body.dark-mode .sb-nested-dropdown { background-color: #111; border-color: var(--clr-primary); }
 /* Show dropdown on hover */
 /* 1. Only allow Hover on Desktop (Laptops) */
 @media (min-width: 992px) {
@@ -988,9 +999,9 @@ body.dark-mode .dev-role { color: #aaa !important; }
         <li><a class="sb-dropdown-item" href="#">Edition 3</a></li>
       </ul>
     </li>
-    <li class="sb-submenu-parent">
-      <a class="sb-dropdown-item" href="#">Ingenious Probers ▸</a>
-      <ul class="sb-nested-dropdown">
+   <li class="sb-submenu-parent">
+  <a class="sb-dropdown-item" href="#">Ingenious Probers <span style="float: right;">&nbsp;▸</span></a>
+  <ul class="sb-nested-dropdown">
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1yeRexHGbTkaNED6yqMGuwQJf54qF61l5/view?usp=sharing">Issue 1</a></li>
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/1gXTJ_8X3iYUbg--3PvB95fkCeyOJVUec/view?usp=drive_link">Issue 2</a></li>
         <li><a class="sb-dropdown-item" href="https://drive.google.com/file/d/15EZo7ZVcI8wtyVcTG-ZN9JI_pVjPUHgi/view?usp=drive_link">Issue 3</a></li>
